@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Britannia Industries Ltd - Company Profile | Alpha Research</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: #ffffff;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #1e3a8a;
+        }
+
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem 2rem;
+        }
+
+        .report-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .category-tag {
+            display: inline-block;
+            color: #3b82f6;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .report-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a202c;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .company-subtitle {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .report-meta {
+            display: flex;
+            gap: 1.5rem;
+            color: #718096;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .key-metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background: #f7fafc;
+            padding: 1.3rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: #718096;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a202c;
+        }
+
+        .metric-change {
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        .metric-change.positive {
+            color: #10b981;
+        }
+
+        .metric-change.negative {
+            color: #ef4444;
+        }
+
+        .summary-box {
+            background: #f7fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .summary-box h3 {
+            font-size: 1rem;
+            color: #1a202c;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .summary-box p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .content {
+            font-size: 1.05rem;
+            color: #2d3748;
+        }
+
+        .content h2 {
+            font-size: 1.6rem;
+            color: #1a202c;
+            margin: 2.5rem 0 1rem 0;
+            font-weight: 700;
+        }
+
+        .content h3 {
+            font-size: 1.3rem;
+            color: #1a202c;
+            margin: 2rem 0 0.8rem 0;
+            font-weight: 600;
+        }
+
+        .content p {
+            margin-bottom: 1.3rem;
+            line-height: 1.7;
+        }
+
+        .content ul {
+            margin: 1.2rem 0;
+            padding-left: 2rem;
+        }
+
+        .content li {
+            margin-bottom: 0.6rem;
+            line-height: 1.6;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .data-table th {
+            background: #1e3a8a;
+            color: white;
+            padding: 0.9rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .data-table td {
+            padding: 0.9rem;
+            border-bottom: 1px solid #e2e8f0;
+            color: #4a5568;
+        }
+
+        .data-table tr:hover {
+            background: #f7fafc;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table td:first-child {
+            font-weight: 500;
+            color: #2d3748;
+        }
+
+        .highlights-box {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .highlights-box h3 {
+            font-size: 1.1rem;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .highlights-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .highlights-box li {
+            padding: 0.6rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            color: #4a5568;
+        }
+
+        .highlights-box li:before {
+            content: "•";
+            position: absolute;
+            left: 0.5rem;
+            color: #3b82f6;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .info-box {
+            background: #eef2ff;
+            border-left: 4px solid #6366f1;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .info-box p {
+            margin: 0;
+            color: #4c51bf;
+        }
+
+        .shareholding-table {
+            margin: 2rem 0;
+        }
+
+        footer {
+            background: #f7fafc;
+            padding: 2rem;
+            margin-top: 4rem;
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .report-title {
+                font-size: 1.7rem;
+            }
+
+            .content {
+                font-size: 1rem;
+            }
+
+            .article-container {
+                padding: 2rem 1.2rem;
+            }
+
+            .key-metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span>α</span>
+                <span>Alpha Research</span>
+            </a>
+            <a href="index.html" class="back-link">← All Reports</a>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        
+        <div class="report-header">
+            <div class="category-tag">COMPANY PROFILE</div>
+            
+            <h1 class="report-title">Britannia Industries Ltd - One Page Profile</h1>
+            
+            <p class="company-subtitle">Britannia Industries Limited is an Indian multinational food products company, which sells biscuits, breads and dairy products. Founded in 1892, it is one of India's oldest existing companies and currently part of the Wadia Group headed by Nusli Wadia.</p>
+            
+            <div class="report-meta">
+                <span class="meta-item">
+                    <span>📅</span>
+                    <span>February 16, 2026</span>
+                </span>
+                <span class="meta-item">
+                    <span>📊</span>
+                    <span>BSE: 500825 | NSE: BRITANNIA</span>
+                </span>
+                <span class="meta-item">
+                    <span>✍️</span>
+                    <span>Alpha Research Team</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="key-metrics-grid">
+            <div class="metric-card">
+                <div class="metric-label">Current Price</div>
+                <div class="metric-value">₹4,889</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Market Cap</div>
+                <div class="metric-value">₹1.18L Cr</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">P/E Ratio</div>
+                <div class="metric-value">44.85x</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">ROE (FY23)</div>
+                <div class="metric-value">65.69%</div>
+                <div class="metric-change positive">↑ Strong</div>
+            </div>
+        </div>
+
+        <div class="summary-box">
+            <h3>About Britannia Industries</h3>
+            <p>As of 2023, about 80% of revenues came from biscuit products. Britannia is one of the leading players in the business segment with a dominant market share (90% of revenue) in the Indian biscuit segment. The company has a wide range of biscuit portfolio across various categories including glucose, Marie, cookies, crackers, cream, milk, and health segments.</p>
+        </div>
+
+        <div class="content">
+            
+            <h2>Financial Performance Highlights (FY19-FY23)</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Metric (₹ Crores)</th>
+                        <th>Mar-19</th>
+                        <th>Mar-20</th>
+                        <th>Mar-21</th>
+                        <th>Mar-22</th>
+                        <th>Mar-23</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Total Sales</td>
+                        <td>11,054.7</td>
+                        <td>11,599.6</td>
+                        <td>13,136.1</td>
+                        <td>14,136.3</td>
+                        <td>16,300.6</td>
+                    </tr>
+                    <tr>
+                        <td>Sales Growth (YoY)</td>
+                        <td>11.51%</td>
+                        <td>4.93%</td>
+                        <td>13.25%</td>
+                        <td>7.61%</td>
+                        <td>15.31%</td>
+                    </tr>
+                    <tr>
+                        <td>EBITDA Margin</td>
+                        <td>17.57%</td>
+                        <td>18.23%</td>
+                        <td>21.59%</td>
+                        <td>17.20%</td>
+                        <td>21.06%</td>
+                    </tr>
+                    <tr>
+                        <td>Net Profit Margin</td>
+                        <td>10.49%</td>
+                        <td>12.09%</td>
+                        <td>14.19%</td>
+                        <td>10.79%</td>
+                        <td>14.24%</td>
+                    </tr>
+                    <tr>
+                        <td>EPS (₹)</td>
+                        <td>48.2</td>
+                        <td>58.3</td>
+                        <td>77.4</td>
+                        <td>63.3</td>
+                        <td>96.4</td>
+                    </tr>
+                    <tr>
+                        <td>EPS Growth (YoY)</td>
+                        <td>15.33%</td>
+                        <td>20.91%</td>
+                        <td>32.67%</td>
+                        <td>-18.19%</td>
+                        <td>52.27%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Key Observations</h3>
+            <ul>
+                <li><strong>Strong Revenue Growth:</strong> Sales grew at a CAGR of ~10% from FY19 to FY23, reaching ₹16,300.6 crores</li>
+                <li><strong>Margin Expansion:</strong> Net profit margins improved from 10.49% to 14.24%, demonstrating operational efficiency</li>
+                <li><strong>EPS Growth:</strong> Significant EPS growth of 52.27% in FY23, reaching ₹96.4 per share</li>
+                <li><strong>Dividend Growth:</strong> Dividend per share increased from ₹15 in FY19 to ₹72 in FY23</li>
+            </ul>
+
+            <h2>Valuation Metrics</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Ratio</th>
+                        <th>Mar-19</th>
+                        <th>Mar-20</th>
+                        <th>Mar-21</th>
+                        <th>Mar-22</th>
+                        <th>Mar-23</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>P/E Ratio</td>
+                        <td>63.97x</td>
+                        <td>46.11x</td>
+                        <td>46.85x</td>
+                        <td>50.66x</td>
+                        <td>44.85x</td>
+                    </tr>
+                    <tr>
+                        <td>EV/EBITDA</td>
+                        <td>15.38x</td>
+                        <td>23.51x</td>
+                        <td>24.11x</td>
+                        <td>28.34x</td>
+                        <td>35.78x</td>
+                    </tr>
+                    <tr>
+                        <td>P/B Ratio</td>
+                        <td>12.68x</td>
+                        <td>20.79x</td>
+                        <td>15.41x</td>
+                        <td>15.02x</td>
+                        <td>17.52x</td>
+                    </tr>
+                    <tr>
+                        <td>ROE</td>
+                        <td>27.25%</td>
+                        <td>31.86%</td>
+                        <td>52.54%</td>
+                        <td>59.61%</td>
+                        <td>65.69%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Shareholding Pattern</h2>
+
+            <div class="shareholding-table">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Shareholder Type</th>
+                            <th>Holding %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Promoters</td>
+                            <td>50.55%</td>
+                        </tr>
+                        <tr>
+                            <td>Foreign Institutional Investors</td>
+                            <td>18.99%</td>
+                        </tr>
+                        <tr>
+                            <td>Domestic Institutional Investors</td>
+                            <td>14.84%</td>
+                        </tr>
+                        <tr>
+                            <td>Public</td>
+                            <td>15.62%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Major Shareholders</h3>
+            <ul>
+                <li><strong>Associated Biscuits International Limited:</strong> 44.76% (Promoter Group)</li>
+                <li><strong>Qualified Institutional Buyers:</strong> 5.79%</li>
+                <li><strong>LIC ASM Non Par:</strong> 3.89%</li>
+                <li><strong>SBI Magnum Equity ESG Fund:</strong> 2.08%</li>
+                <li><strong>LIC Health Plus Fund:</strong> 1.97%</li>
+            </ul>
+
+            <h2>Management Team</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Designation</th>
+                        <th>Remuneration (x of Median Salary)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mr. Nusli N. Wadia</td>
+                        <td>Chairman</td>
+                        <td>6.81x</td>
+                    </tr>
+                    <tr>
+                        <td>Mr. Varun Berry</td>
+                        <td>Executive Vice Chairman & MD</td>
+                        <td>12.84x</td>
+                    </tr>
+                    <tr>
+                        <td>Mr. Rajneet Singh Kohli</td>
+                        <td>Executive Director & CEO</td>
+                        <td>2.60x</td>
+                    </tr>
+                    <tr>
+                        <td>Mr. N. Venkataraman</td>
+                        <td>Executive Director & CFO</td>
+                        <td>3.82x</td>
+                    </tr>
+                    <tr>
+                        <td>Mr. T.V. Thulsidass</td>
+                        <td>Company Secretary</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Strategic Initiatives & Growth Drivers</h2>
+
+            <h3>Capex - Mega Project in Ranjangaon, Maharashtra</h3>
+            <p>Britannia Industries is building its mega project in Ranjangaon, Maharashtra to increase the capacity of all categories ranging from biscuits, cake, rusk, croissant & dairy plant. The company has invested ₹700 Cr so far and plans to add another ₹800 Cr strategically. The company will receive 110% incentive from the Maharashtra government after the completion of the project.</p>
+
+            <h3>80:20 Growth Strategy</h3>
+            <p>The company performed well during the COVID crisis by following the 80:20 rule. The company focused on 20% of the brands like Marie Gold, Good Day, Milk Bikis & NutriChoice, which contribute 80% of the company's revenue. These were put on priority list which enabled the company to streamline its productivity and increase the efficiency of production.</p>
+
+            <h3>Dairy Expansion</h3>
+            <p>The company sells cheese, beverages, milk and yoghurt under the dairy division, which directly reaches 100,000 outlets. The segment witnessed the highest growth, especially in cheese products which grew 300% during the year. The company is planning to start 5 new facilities and expand its Orissa plant by procuring 25,000 Litre/day from 1,000 farmers in Maharashtra.</p>
+
+            <div class="highlights-box">
+                <h3>Key Highlights</h3>
+                <ul>
+                    <li>Britannia aims to further expand its product portfolio and market reach, both domestically and internationally</li>
+                    <li>Continues to focus on innovation, quality, and sustainability to drive growth and meet evolving consumer demands</li>
+                    <li>Strong presence across India with exports to over 60 countries</li>
+                    <li>Holds significant market share in the Indian biscuit industry competing with both domestic and international brands</li>
+                    <li>Committed to sustainability and social responsibility initiatives</li>
+                    <li>Focuses on reducing environmental impact, promoting health and nutrition, and supporting community development projects</li>
+                </ul>
+            </div>
+
+            <h2>Recent Developments</h2>
+
+            <div class="info-box">
+                <p><strong>NutriPlus App Launch:</strong> Britannia NutriChoice forayed into the crowded healthtech space with the launch of the NutriPlus app in collaboration with technology company Aktivo Labs, which simplifies health tracking through a single everyday score.</p>
+            </div>
+
+            <div class="info-box">
+                <p><strong>Brand Collaboration:</strong> Winkin' Cow, India's milkshake brand under Britannia, has collaborated with Britannia Bourbon, marking a significant milestone in both brands' legacies.</p>
+            </div>
+
+            <div class="info-box">
+                <p><strong>Analyst Rating:</strong> KR Choksey recommended accumulate rating on Britannia Industries with a target price of ₹5,367 in its research report dated February 20, 2024.</p>
+            </div>
+
+            <h2>Product Portfolio</h2>
+
+            <h3>Biscuits (90% of Revenue)</h3>
+            <p>Wide range across various categories:</p>
+            <ul>
+                <li><strong>Glucose:</strong> Tiger, Britannia</li>
+                <li><strong>Marie:</strong> Marie Gold</li>
+                <li><strong>Cookies:</strong> Good Day, Bourbon</li>
+                <li><strong>Health:</strong> NutriChoice</li>
+                <li><strong>Cream:</strong> Treat, Pure Magic</li>
+                <li><strong>Milk:</strong> Milk Bikis</li>
+            </ul>
+
+            <h3>Dairy Products (10% of Revenue)</h3>
+            <ul>
+                <li>Cheese products (300% growth)</li>
+                <li>Beverages (Winkin' Cow milkshakes)</li>
+                <li>Milk and Yoghurt</li>
+                <li>Direct reach to 100,000 outlets</li>
+            </ul>
+
+            <h2>Company Background</h2>
+
+            <p>Britannia Industries belongs to the Wadia Group, a reputed Indian business house with presence in wide range of business segments:</p>
+            <ul>
+                <li><strong>Airlines:</strong> Go Air</li>
+                <li><strong>Realty:</strong> Bombay Realty</li>
+                <li><strong>Textiles:</strong> Bombay Dyeing</li>
+                <li><strong>Plantations and Other Business:</strong> Bombay Burmah Trading Corporation (ultimate holding company of Britannia Industries)</li>
+            </ul>
+
+            <h2>Investment Considerations</h2>
+
+            <h3>Strengths</h3>
+            <ul>
+                <li>Market leader with 90% market share in biscuit segment</li>
+                <li>Strong brand portfolio with iconic brands</li>
+                <li>Exceptional ROE of 65.69% demonstrating efficient capital allocation</li>
+                <li>Consistent revenue and earnings growth</li>
+                <li>Expanding dairy business with 300% growth in cheese</li>
+                <li>Strong distribution network reaching 100,000+ outlets</li>
+                <li>Part of reputed Wadia Group</li>
+            </ul>
+
+            <h3>Growth Catalysts</h3>
+            <ul>
+                <li>₹1,500 Cr capex in Ranjangaon facility with 110% government incentive</li>
+                <li>Dairy business expansion with 5 new facilities planned</li>
+                <li>Digital innovation with NutriPlus app</li>
+                <li>International expansion to 60+ countries</li>
+                <li>Product innovation and premiumization</li>
+            </ul>
+
+            <h3>Key Risks</h3>
+            <ul>
+                <li>Premium valuation (P/E of 44.85x)</li>
+                <li>Input cost inflation (flour, sugar, milk)</li>
+                <li>Intense competition in FMCG sector</li>
+                <li>Regulatory changes in food industry</li>
+                <li>Dependence on single category (80% from biscuits)</li>
+            </ul>
+
+        </div>
+
+        <div class="info-box" style="margin-top: 3rem;">
+            <p><strong>Disclaimer:</strong> This report is for informational purposes only and should not be considered as investment advice. Please consult with a financial advisor before making any investment decisions. All data is as per the latest available information and subject to change.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Alpha Research. All rights reserved.</p>
+        <p>For more research reports and market insights, visit <a href="index.html" style="color: #3b82f6; text-decoration: none;">alpharesearch.com</a></p>
+    </footer>
+
+</body>
+</html>
